@@ -3,10 +3,11 @@
 workspace_dir="${WORKSPACE}"
 build_base="${WORKSPACE}/../builds/${BUILD_NUMBER}"
 build_dir="${build_base}/build"
-build_file="${build_base}/`date +%Y-%m-%d`-${BUILD_NUMBER}.tar.gz"
+build_file="${build_base}/`date +%Y-%m-%d`-build${BUILD_NUMBER}.tar.gz"
 
 echo -n "Copying files to build directory..."
 cp -r ${workspace_dir} ${build_dir}
+rm -rf ${build_dir/.git
 echo "DONE"
 
 
