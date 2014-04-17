@@ -1,5 +1,9 @@
 <project name="My Project Name" default="build">
     <target name="deploy">
         <echo>${basedir} ${BuildDir} ${env.workspace} ${env.JOB_NAME}  ${env.WORKSPACE}</echo>
+        <echo>${BuildDir}</echo>
+        <echo>${env.workspace}</echo>
+        <echo>${env.JOB_NAME}</echo>
+        <echo>${env.WORKSPACE}</echo>
     </target>
 </project>
