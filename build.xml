@@ -1,6 +1,5 @@
 <project name="My Project Name" default="build">
     <target name="deploy">
-        <echo>${basedir} ${WORKSPACE}</echo>
-        <echo message="....deploy.jboss ${basedir}"/> 
+        <echo>${basedir} ${BuildDir} ${env.workspace} ${env.JOB_NAME}  ${env.WORKSPACE}</echo>
     </target>
 </project>
