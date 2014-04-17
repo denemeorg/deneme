@@ -1,10 +1,13 @@
 <project name="N11MobileWeb" default="build">
+
     <property environment="env"/>
     <property name="workspace_dir">${env.WORKSPACE}</property>
     <property name="build_base">${env.WORKSPACE}/../builds/${env.BUILD_NUMBER}</property>
     <property name="build_dir">${build_base}/build</property>
+    <property name="deploy_script">${build_dir}/deploy.sh</property>
 
     <target name="copyfiles">
+        <echo>Copying files to build directory</echo>
         <copy todir="${build_dir}">
             <fileset dir="${workspace_dir}">
                 <include name="**/*"/>
@@ -13,5 +16,10 @@
         </copy>
     </target>
 
-    <target name="deploy" depends="copyfiles" />
+    <target name="deploy">
+        <echo>Running deploy script</echo>
+        <exec executable="${deploy_script}"/>
+    </target>
+
+    <target name="default" depends="copyfiles, deploy" />
 </project>
