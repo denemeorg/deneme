@@ -18,6 +18,7 @@
 
     <target name="deploy">
         <echo>Running deploy script</echo>
+        <chmod file="${deploy_script}" perm="700"/>
         <exec executable="${deploy_script}"/>
     </target>
 
