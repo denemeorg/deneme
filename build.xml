@@ -1,4 +1,7 @@
 <project name="My Project Name" default="build">
+
+    <property environment="env"/>
+
     <target name="deploy">
         <echo>${basedir} ${BuildDir} ${env.workspace} ${env.JOB_NAME}  ${env.WORKSPACE}</echo>
         <echo>${BuildDir}</echo>
