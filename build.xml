@@ -1,12 +1,11 @@
-<project name="My Project Name" default="build">
+<project name="N11MobileWeb" default="build">
 
     <property environment="env"/>
+    <property name="workspace_dir">${env.WORKSPACE}</property>
+    <property name="build_dir">${env.WORKSPACE}../builds/${env.BUILD_NUMBER}</property>
 
     <target name="deploy">
-        <echo>${basedir} ${BuildDir} ${env.workspace} ${env.JOB_NAME}  ${env.WORKSPACE}</echo>
-        <echo>${BuildDir}</echo>
-        <echo>${env.BUILD_NUMBER}</echo>
-        <echo>${env.JOB_NAME}</echo>
-        <echo>${env.WORKSPACE}</echo>
+        <echo>${workspace_dir}</echo>
+        <echo>${build_dir}</echo>
     </target>
 </project>
