@@ -1,7 +1,7 @@
 #!/bin/bash
 
 workspace_dir="${WORKSPACE}"
-build_base="${env.WORKSPACE}/../builds/${env.BUILD_NUMBER}"
+build_base="${WORKSPACE}/../builds/${BUILD_NUMBER}"
 build_dir="${build_base}/build"
 
 echo "-------------- here comes deploy script ----------"
