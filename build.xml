@@ -1,11 +1,17 @@
 <project name="N11MobileWeb" default="build">
-
     <property environment="env"/>
     <property name="workspace_dir">${env.WORKSPACE}</property>
-    <property name="build_dir">${env.WORKSPACE}../builds/${env.BUILD_NUMBER}</property>
+    <property name="build_base">${env.WORKSPACE}/../builds/${env.BUILD_NUMBER}</property>
+    <property name="build_dir">${build_base}/build</property>
 
-    <target name="deploy">
-        <echo>${workspace_dir}</echo>
-        <echo>${build_dir}</echo>
+    <target name="copyfiles">
+        <copy todir="${build_dir}">
+            <fileset dir="${workspace_dir}">
+                <include name="**/*"/>
+                <exclude name="${workspace_dir}/.git"/>
+            </fileset>
+        </copy>
     </target>
+
+    <target name="deploy" depends="copyfiles" />
 </project>
